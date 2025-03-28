@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/Valor1Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Valor 1:"
+        />
+
+    <EditText
+        android:id="@+id/Valor1Entrada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        />
+
+    <TextView
+        android:id="@+id/Valor2Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:text="Valor 2:"
+        />
+
+    <EditText
+        android:id="@+id/Valor2Entrada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:ems="10"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Soma"
+        android:layout_below="@+id/Valor2Entrada"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:onClick="acaoBotao"
+        android:tag="Soma"
+        android:text="@string/Soma"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Sub"
+        android:layout_below="@+id/Valor2Entrada"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@+id/Soma"
+        android:onClick="acaoBotao"
+        android:tag="Sub"
+        android:text="@string/Sub"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Mult"
+        android:layout_below="@+id/Valor2Entrada"
+        android:layout_marginTop="60dp"
+        android:layout_toLeftOf="@id/Div"
+        android:onClick="acaoBotao"
+        android:tag="Mult"
+        android:text="@string/Mult"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Div"
+        android:layout_below="@+id/Valor2Entrada"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:onClick="acaoBotao"
+        android:tag="Div"
+        android:text="@string/Div"
+        />
+
+    <TextView
+        android:id="@+id/Resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Div"
+        android:layout_marginTop="60dp"
+        android:text="Resultado:"
+        />
+
+</RelativeLayout>
