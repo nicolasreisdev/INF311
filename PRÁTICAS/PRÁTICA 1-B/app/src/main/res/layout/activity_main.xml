@@ -1,19 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
-    <TextView
+    <EditText
+        android:id="@+id/visor"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:inputType="none"
+        android:editable="false"
+        android:padding="10dp"
+        android:background="@android:color/darker_gray"/>
+
+    <!-- Primeira linha -->
+    <LinearLayout
+        android:id="@+id/FirstLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/visor"
+        android:layout_marginTop="30dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Seven"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Seven"
+            android:text="@string/Seven"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Eight"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Eight"
+            android:text="@string/Eight"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Nine"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Nine"
+            android:text="@string/Nine"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Div"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoAlgebra"
+            android:tag="Div"
+            android:text="@string/Div"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Limpar1"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoClear"
+            android:tag="Limpar"
+            android:text="@string/Limpar"
+            />
+    </LinearLayout>
+    <!-- Segunda linha -->
+    <LinearLayout
+        android:id="@+id/SecondLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/FirstLine">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Four"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Four"
+            android:text="@string/Four"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Five"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Five"
+            android:text="@string/Five"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Six"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Six"
+            android:text="@string/Six"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Mult"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoAlgebra"
+            android:tag="Mult"
+            android:text="@string/Mult"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Limpar2"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoClear"
+            android:tag="Limpar2"
+            android:text="@string/Limpar"
+            />
+    </LinearLayout>
+    <!-- Terceira linha -->
+    <LinearLayout
+        android:id="@+id/ThirdLine"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/SecondLine">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/One"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="One"
+            android:text="@string/One"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Two"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Two"
+            android:text="@string/Two"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Three"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoNumber"
+            android:tag="Three"
+            android:text="@string/Three"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Sub"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoAlgebra"
+            android:tag="Sub"
+            android:text="@string/Sub"
+            />
+    </LinearLayout>
+    <!-- Quarta linha -->
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ThirdLine"
+        android:id="@+id/Zero"
+        android:layout_marginTop="1dp"
+        android:onClick="acaoNumber"
+        android:tag="Zero"
+        android:text="@string/Zero"
+        />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_toRightOf="@+id/ThirdLine"
+        android:layout_alignTop="@+id/ThirdLine"
+        android:layout_alignBottom="@id/LastLine"
+        android:id="@+id/Result"
+        android:layout_marginTop="1dp"
+        android:onClick="Result"
+        android:tag="Result"
+        android:text="@string/Result"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/LastLine"
+        android:layout_toLeftOf="@+id/Result"
+        android:layout_toRightOf="@+id/Two"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/ThirdLine"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Ponto"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoAlgebra"
+            android:tag="Ponto"
+            android:text="@string/Ponto"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Soma"
+            android:layout_marginTop="1dp"
+            android:onClick="acaoAlgebra"
+            android:tag="SOma"
+            android:text="@string/Soma"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
