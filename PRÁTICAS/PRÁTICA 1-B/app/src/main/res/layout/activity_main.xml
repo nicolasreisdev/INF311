@@ -12,7 +12,8 @@
         android:inputType="none"
         android:editable="false"
         android:padding="10dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray"
+        />
 
     <!-- Primeira linha -->
     <LinearLayout
@@ -71,11 +72,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/Limpar1"
+            android:id="@+id/Backspace"
             android:layout_marginTop="1dp"
             android:onClick="acaoClear"
-            android:tag="Limpar"
-            android:text="@string/Limpar"
+            android:tag="Backspace"
+            android:text="@string/Backspace"
             />
     </LinearLayout>
     <!-- Segunda linha -->
@@ -133,10 +134,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/Limpar2"
+            android:id="@+id/Limpar"
             android:layout_marginTop="1dp"
             android:onClick="acaoClear"
-            android:tag="Limpar2"
+            android:tag="Limpar"
             android:text="@string/Limpar"
             />
     </LinearLayout>
@@ -221,7 +222,6 @@
     <LinearLayout
         android:id="@+id/LastLine"
         android:layout_toLeftOf="@+id/Result"
-        android:layout_toRightOf="@+id/Two"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -246,7 +246,7 @@
             android:id="@+id/Soma"
             android:layout_marginTop="1dp"
             android:onClick="acaoAlgebra"
-            android:tag="SOma"
+            android:tag="Soma"
             android:text="@string/Soma"
             />
 
