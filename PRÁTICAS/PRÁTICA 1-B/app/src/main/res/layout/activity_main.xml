@@ -234,11 +234,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/Point"
+            android:id="@+id/Dot"
             android:layout_marginTop="1dp"
             android:onClick="operatorAction"
-            android:tag="Point"
-            android:text="@string/Point"
+            android:tag="Dot"
+            android:text="@string/Dot"
             />
 
         <Button

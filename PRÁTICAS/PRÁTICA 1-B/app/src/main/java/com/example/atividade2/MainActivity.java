@@ -118,7 +118,7 @@ public class MainActivity extends Activity {
                 visor.setText(newText);
             }
         }
-        else if(tag.equals("Point")){
+        else if(tag.equals("Dot")){
             char lastCharacter = (currentText.length() == 0) ? 'N' : currentText.charAt(currentText.length()-1);
             if(lastCharacter == 'x' || lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '/' || lastCharacter == '.'){
                 return;
