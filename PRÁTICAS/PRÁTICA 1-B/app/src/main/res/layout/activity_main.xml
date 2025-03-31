@@ -137,8 +137,8 @@
             android:id="@+id/Limpar"
             android:layout_marginTop="1dp"
             android:onClick="clearAction"
-            android:tag="Limpar"
-            android:text="@string/Limpar"
+            android:tag="Clear"
+            android:text="@string/Clear"
             />
     </LinearLayout>
     <!-- Terceira linha -->
@@ -234,11 +234,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/Ponto"
+            android:id="@+id/Point"
             android:layout_marginTop="1dp"
             android:onClick="operatorAction"
-            android:tag="Ponto"
-            android:text="@string/Ponto"
+            android:tag="Point"
+            android:text="@string/Point"
             />
 
         <Button
@@ -248,8 +248,8 @@
             android:id="@+id/Soma"
             android:layout_marginTop="1dp"
             android:onClick="operatorAction"
-            android:tag="Soma"
-            android:text="@string/Soma"
+            android:tag="Plus"
+            android:text="@string/Plus"
             />
 
     </LinearLayout>

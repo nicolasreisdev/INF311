@@ -10,10 +10,10 @@
     <string name="Seven">7</string>
     <string name="Eight">8</string>
     <string name="Nine">9</string>
-    <string name="Ponto">.</string>
+    <string name="Point">.</string>
     <string name="Backspace">«</string>
-    <string name="Limpar">C</string>
-    <string name="Soma">+</string>
+    <string name="Clear">C</string>
+    <string name="Plus">+</string>
     <string name="Sub">-</string>
     <string name="Mult">*</string>
     <string name="Div">/</string>

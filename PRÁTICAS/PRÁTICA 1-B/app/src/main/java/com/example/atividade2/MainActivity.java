@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
     public void operatorAction(View view){
         String currentText = visor.getText().toString();
         String tag = view.getTag().toString();
-        if(tag.equals("Soma")){
+        if(tag.equals("Plus")){
             char lastCharacter = (currentText.length() == 0) ? 'N' : currentText.charAt(currentText.length()-1);
             if(lastCharacter == 'x' || lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '/' || lastCharacter == '.'){
                 return;
@@ -119,7 +119,7 @@ public class MainActivity extends Activity {
                 visor.setText(newText);
             }
         }
-        else if(tag.equals("Ponto")){
+        else if(tag.equals("Point")){
             char lastCharacter = (currentText.length() == 0) ? 'N' : currentText.charAt(currentText.length()-1);
             if(lastCharacter == 'x' || lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '/' || lastCharacter == '.'){
                 return;
@@ -137,7 +137,7 @@ public class MainActivity extends Activity {
             String newText = currentText.substring(0, currentText.length()-1);
             visor.setText(newText);
         }
-        else if(tag.equals("Limpar")){
+        else if(tag.equals("Clear")){
             String newText = "";
             visor.setText(newText);
         }
