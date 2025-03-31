@@ -30,7 +30,6 @@ public class MainActivity extends Activity {
         String tag = view.getTag().toString();
         if(tag.equals("Zero")){
             char lastCharacter = (currentText.length() == 0) ? 'N' : currentText.charAt(currentText.length()-1);
-            char penultimatemoCaracter = (currentText.length() == 0 || currentText.length() == 1) ? 'N' : currentText.charAt(currentText.length()-2);
             if(lastCharacter == '0' && lastCharacter == 'x' || lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '/' || lastCharacter == '.' ){
                 visor.setText(currentText);
             }
