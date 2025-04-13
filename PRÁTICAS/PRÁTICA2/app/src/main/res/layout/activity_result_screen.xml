@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".inputScreen">
+
+    <TextView
+        android:id="@+id/Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/result"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:typeface="serif"
+        />
+
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Result"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/outputName"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/outputName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Result"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="150dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/outputAge"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/outputAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputName"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="150dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/age"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/outputWeight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/outputWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputAge"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="150dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weight"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/outputHeight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/outputHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputWeight"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="150dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/imc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/height"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/outputIMC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/outputIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputHeight"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="150dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/classification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imc"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/classification"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/outputClassification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputIMC"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="200dp"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/classification"
+        android:text="@string/newCalc"
+        android:onClick="onFinish"
+        />
+</RelativeLayout>
