@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FirstTask</string>
+    <string name="DPI">DPI</string>
+    <string name="MOC">MOC</string>
+    <string name="Vicosa">Vicosa</string>
+    <string name="currentLocation">Localizacao</string>
+
+</resources>

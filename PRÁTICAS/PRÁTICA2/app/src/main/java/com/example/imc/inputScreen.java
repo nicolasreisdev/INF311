@@ -18,7 +18,7 @@ public class inputScreen extends Activity {
 
 
     public void clickButton(View view){
-        name = (EditText) findViewById(R.id.inputName);
+        name = (EditText) view.findViewById(R.id.inputName);
         age = (EditText) findViewById(R.id.inputAge);
         weight = (EditText) findViewById(R.id.inputWeight);
         height = (EditText) findViewById(R.id.inputHeight);
