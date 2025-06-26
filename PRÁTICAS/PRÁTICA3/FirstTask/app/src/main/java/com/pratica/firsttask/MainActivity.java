@@ -42,11 +42,14 @@ public class MainActivity extends ListActivity {
         setListAdapter(adp);
     }
 
+
+    // método para tratar o clique na lista de opções
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent it = new Intent(this,Mapa.class);
 
+        // inserindo dados no banco de dados
         ContentValues values = new ContentValues();
         Date data = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

@@ -37,6 +37,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.text.DecimalFormat;
 
+// Classe com fragment do mapa do aplicativo, implementa a interface OnMapReadyCallback e LocationListener
 public class Mapa extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     public LocationManager lm;
@@ -69,6 +70,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
             String[] colunas = {"Lat", "Lng"};
             String where = "nome = 'MOC'";
 
+            // procura no banco de dados o local MOC
             Cursor cursor = BancoDados.getInstance().buscar("Location", colunas,where, "");
 
             if(cursor.moveToFirst()){
@@ -83,6 +85,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
 
             cursor.close();
             Log.i("Teste", "Consultei");
+            // cria um marcador na posição do local MOC
             Marker = new LatLng(latitude, longitude);
             Log.i("Mapa", "Entrei");
         }
@@ -126,12 +129,14 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
             Log.i("Mapa", "Entrei");
         }
 
+        // inicializa o gerenciador de localização
         lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        criteria = new Criteria();
-        PackageManager packageManager = getPackageManager();
+        criteria = new Criteria(); // define critérios de localização
+        PackageManager packageManager = getPackageManager(); // verifica se o dispositivo tem GPS
         boolean hasGPS = packageManager.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
 
         if(hasGPS){
+            // define critérios de localização
             criteria.setAccuracy(Criteria.ACCURACY_FINE);
         }else {
             Log.i("GPS", "Não tem GPS");
@@ -146,6 +151,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
     @Override
     protected void onStart() {
         super.onStart();
+        // procura o provedor de localização mais apropriado
         provider = lm.getBestProvider(criteria, true);
 
         requestLocation();
@@ -153,16 +159,20 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
 
     @Override
     protected void onDestroy(){
+        // remove atualizações de localização
         lm.removeUpdates(this);
 
         super.onDestroy();
     }
 
+    // método para receber atualizações de localização
     @Override
     public void onLocationChanged(Location location) {
         Log.i("Atual", "Cheguei");
+        // se existe localização
         if (location != null) {
 
+            // cria um ponto aleatório
             final Location pontoAleatorio = new Location(provider);
             pontoAleatorio.setLatitude(-20.75824678663597);
             pontoAleatorio.setLongitude(-42.88029027646495);
@@ -183,15 +193,20 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
         }
     }
 
+    // método para solicitar atualizações de localização
     public void requestLocation(){
+        // verifica se o dispositivo tem permissão para acessar a localização
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            // solicita permissão para acessar a localização
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-        }else{
+        }else{ // caso já tenha a permissão
             Log.i("Teste", "Possui permissão");
-            if(provider != null){
+            if(provider != null){ // verifica se o provedor de localização existe
                 lm.requestLocationUpdates(provider, TEMPO_REQUISICAO_LATLONG, DISTANCIA_MIN_METROS, this);
             }
+            // procura a localização atual
             Location location = lm.getLastKnownLocation(provider);
+            // se existe localização
             if(location != null){
                 onLocationChanged(location);
             }
@@ -208,11 +223,12 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
         Log.i("GPS", "Status: " + status);
     }
 
+    // caso  o usuário clique no botão 'MOC'
     public void onClick_MOC(View v) {
 
         String[] colunas = {"Lat", "Lng"};
         String where = "nome = 'MOC'";
-
+        // busca no bd o local MOC
         Cursor cursor = BancoDados.getInstance().buscar("Location", colunas,where, "");
 
         if(cursor.moveToFirst()){
@@ -227,15 +243,18 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
 
         cursor.close();
 
+        // seta a posição do marcador
         LatLng MOC = new LatLng(latitude, longitude);
         Log.i("Mapa", "Entrei");
 
-
+        // muda o tipo de mapa
         map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        // adiciona o marcador
         map.addMarker(new MarkerOptions()
                 .position(MOC).title("")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
         );
+        // muda a posição da câmera
         CameraUpdate update = CameraUpdateFactory.newCameraPosition(
                 new CameraPosition.Builder()
                         .target(MOC)
@@ -243,6 +262,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
                         .zoom(15)
                         .build()
         );
+        // faz a animação
         map.animateCamera(update);
     }
 
@@ -320,14 +340,19 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
         map.animateCamera(update);
     }
 
+    // método para voltar para a posição atual
     public void currentLocation(View v) {
         Log.i("Atual", "Entrei");
+        // verifica se o dispositivo tem permissão para acessar a localização
         requestLocation();
+        // muda o tipo de mapa
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        // adiciona o marcador
         map.addMarker(new MarkerOptions()
                 .position(ATUAL).title("")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         );
+        // muda a posição da câmera
         CameraUpdate update = CameraUpdateFactory.newCameraPosition(
                 new CameraPosition.Builder()
                         .target(ATUAL)
@@ -335,17 +360,21 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
                         .zoom(15)
                         .build()
         );
+        // faz a animação
         map.animateCamera(update);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         Log.i("Teste", "onMapReady");
+        // instancia o mapa
         map = googleMap;
+        // muda o tipo de mapa
         map.addMarker(new MarkerOptions()
                 .position(Marker).title("")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
         );
+        // muda a posição da câmera
         CameraUpdate update = CameraUpdateFactory.newCameraPosition(
                 new CameraPosition.Builder()
                         .target(Marker)
@@ -353,6 +382,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Locati
                         .zoom(15)
                         .build()
         );
+        // faz a animação
         map.animateCamera(update);
     }
 }
