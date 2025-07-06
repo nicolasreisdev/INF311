@@ -21,11 +21,15 @@ public class MainActivity extends Activity {
         Log.i("Teste", "Iniciou Primeira Tela") ;
     }
 
+    // método para chamar a segunda tela passando um intent 
     public void onClickClassification(View v){
+        // passa a intent com action para a segunda tela
         Intent it = new Intent("com.pratica.secondscreen.Classification");
+        // inicia a segunda tela com um código de requisição
         startActivityForResult(it, 1);
     }
 
+    // método que recebe o retorno da segunda tela
     @Override
     protected void onActivityResult(int codigoRequisicao, int codigoResultado, Intent it){
         if(it == null){

@@ -4,15 +4,15 @@
 
 
     <item
-        android:id="@+id/action_mapa"
+        android:id="@+id/Mapa"
         android:title="Mapa de Check-In"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_gestao"
+        android:id="@+id/GestaoCheckin"
         android:title="Gestão de Check-In"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_lugares"
+        android:id="@+id/LugaresVisitados"
         android:title="Lugares Mais Visitados"
         app:showAsAction="never" />
 

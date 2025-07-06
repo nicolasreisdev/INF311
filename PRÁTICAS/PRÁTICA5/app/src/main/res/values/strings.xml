@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">checkinLocais</string>
+    <string name="nome_local">Nome Local:</string>
+    <string name="categoria_do_local">Categoria do Local:</string>
+    <string name="posicionamento_global">Posicionamento Global</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="check_in">CHECK IN</string>
+    <string name="locaisVisitados">Locais Mais Visitados</string>
 </resources>
